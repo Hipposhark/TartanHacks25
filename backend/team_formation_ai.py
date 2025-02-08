@@ -16,7 +16,7 @@ if not OPENAI_API_KEY:
 # Define example prompt
 # prompt = "I want teams to be diverse in skill level but have at least one experienced member in each. Each team should have 4-5 members and be balanced in extroverts and introverts. Ensure that every team has a mix of backgrounds and perspectives. Consider physical attributes like height for sports teams."
 # prompt = "I need to split up my gym class of 40 into 8 teams of 5 players each for basketball. I want each team to have a variety of skill levels and amount of experience."
-prompt = "I am organizing a hackathon and need to form teams of 4-5 members. Each team should have a mix of developers, designers, and project managers. I want to ensure that each team has a balance of experience levels and that there is diversity in terms of background and skills."
+prompt = "I am organizing a hackathon and need to form teams of 4-5 members. Each team should have a mix of developers, designers, and project managers. I want to ensure that each team has a balance of experience levels and that there is diversity in terms of background and skills.To make it easier to parse, only closed ended questions where each answer is a scale from 1-5."
 
 def clean_json_response(response_text):
     """Remove markdown formatting and ensure valid JSON format."""
