@@ -15,8 +15,8 @@ if not OPENAI_API_KEY:
 
 # Define example prompt
 # prompt = "I want teams to be diverse in skill level but have at least one experienced member in each. Each team should have 4-5 members and be balanced in extroverts and introverts. Ensure that every team has a mix of backgrounds and perspectives. Consider physical attributes like height for sports teams."
-# prompt = "I need to split up my gym class of 40 into 8 teams of 5 players each for basketball. I want each team to have a variety of skill levels and amount of experience."
-prompt = "I am organizing a hackathon and need to form teams of 4-5 members. Each team should have a mix of developers, designers, and project managers. I want to ensure that each team has a balance of experience levels and that there is diversity in terms of background and skills."
+prompt = "I need to split up my gym class of 40 into 8 teams of 5 players each for basketball. I want each team to have a variety of skill levels and amount of experience."
+# prompt = "I am organizing a hackathon and need to form teams of 4-5 members. Each team should have a mix of developers, designers, and project managers. I want to ensure that each team has a balance of experience levels and that there is diversity in terms of background and skills."
 
 def clean_json_response(response_text):
     """Remove markdown formatting and ensure valid JSON format."""
@@ -26,7 +26,7 @@ def clean_json_response(response_text):
     return response_text.strip()
 
 def generate_criteria_and_questions(prompt):
-    system_message = "You are an expert in parsing team formation criteria and generating relevant survey questions. Given a natural language prompt, extract the key team formation constraints and then generate a set of varied survey questions (multiple-choice and numerical). Make the questions specific to the given situation. Format the output as valid JSON."
+    system_message = "You are an expert in parsing team formation criteria and generating relevant survey questions. Given a natural language prompt, extract the key team formation constraints and then generate a set of seven multiple-choice survey questions. Frame each question as answerable on a scale from 1 to 5, ensuring that there are always 5 answer choices per question. Make the questions specific to the given situation. Format the output as valid JSON."
     
     client = openai.OpenAI(api_key=OPENAI_API_KEY)
     
