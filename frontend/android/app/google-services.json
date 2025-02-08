@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "975572012603",
+    "project_id": "teamify-ce52e",
+    "storage_bucket": "teamify-ce52e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975572012603:android:8e113f5605e5b40cf3d61e",
+        "android_client_info": {
+          "package_name": "com.example.tartanhacks"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfKqEekvJ8fp1iVOs-UIYR4JAvHLOAeNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

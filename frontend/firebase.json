@@ -1,0 +1,49 @@
+{
+  "emulators": {
+    "dataconnect": {
+      "dataDir": "dataconnect/.dataconnect/pgliteData"
+    }
+  },
+  "dataconnect": {
+    "source": "dataconnect"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "teamify-ce52e",
+          "appId": "1:975572012603:android:8e113f5605e5b40cf3d61e",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "teamify-ce52e",
+          "configurations": {
+            "android": "1:975572012603:android:8e113f5605e5b40cf3d61e",
+            "ios": "1:975572012603:ios:56443806d19443a9f3d61e",
+            "macos": "1:975572012603:ios:56443806d19443a9f3d61e",
+            "web": "1:975572012603:web:eb07432021001f20f3d61e",
+            "windows": "1:975572012603:web:61555bfe7f95100ef3d61e"
+          }
+        }
+      }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
+      ]
+    }
+  ]
+}
