@@ -1,0 +1,164 @@
+Raw Response from OpenAI: ```json
+{
+  "criteria": {
+    "total_players": 40,
+    "teams_count": 8,
+    "players_per_team": 5,
+    "skill_variability": true,
+    "experience_variability": true
+  },
+  "survey_questions": [
+    {
+      "question": "How would you rate your basketball skills compared to others in the class?",
+      "answers": {
+        "1": "Much weaker",
+        "2": "Somewhat weaker",
+        "3": "About the same",
+        "4": "Somewhat stronger",
+        "5": "Much stronger"
+      }
+    },
+    {
+      "question": "How would you assess your level of basketball experience?",
+      "answers": {
+        "1": "No experience",
+        "2": "Beginner",
+        "3": "Intermediate",
+        "4": "Advanced",
+        "5": "Expert"
+      }
+    },
+    {
+      "question": "How important is it for you to be placed on a team with players of varying skill levels?",
+      "answers": {
+        "1": "Not important",
+        "2": "Somewhat unimportant",
+        "3": "Neutral",
+        "4": "Somewhat important",
+        "5": "Very important"
+      }
+    },
+    {
+      "question": "How important is it for you to be on a team with players of various experience levels?",
+      "answers": {
+        "1": "Not important",
+        "2": "Somewhat unimportant",
+        "3": "Neutral",
+        "4": "Somewhat important",
+        "5": "Very important"
+      }
+    },
+    {
+      "question": "How well do you think you can adapt to players with different skill levels on your team?",
+      "answers": {
+        "1": "Very poorly",
+        "2": "Poorly",
+        "3": "Moderately well",
+        "4": "Well",
+        "5": "Very well"
+      }
+    },
+    {
+      "question": "How do you feel about playing with people of both lower and higher experience than yours?",
+      "answers": {
+        "1": "Very uncomfortable",
+        "2": "Uncomfortable",
+        "3": "Neutral",
+        "4": "Comfortable",
+        "5": "Very comfortable"
+      }
+    },
+    {
+      "question": "How likely are you to help less experienced players improve their skills?",
+      "answers": {
+        "1": "Not likely at all",
+        "2": "Unlikely",
+        "3": "Neutral",
+        "4": "Likely",
+        "5": "Very likely"
+      }
+    }
+  ]
+}
+```
+{
+  "criteria": {
+    "total_players": 40,
+    "teams_count": 8,
+    "players_per_team": 5,
+    "skill_variability": true,
+    "experience_variability": true
+  },
+  "survey_questions": [
+    {
+      "question": "How would you rate your basketball skills compared to others in the class?",
+      "answers": {
+        "1": "Much weaker",
+        "2": "Somewhat weaker",
+        "3": "About the same",
+        "4": "Somewhat stronger",
+        "5": "Much stronger"
+      }
+    },
+    {
+      "question": "How would you assess your level of basketball experience?",
+      "answers": {
+        "1": "No experience",
+        "2": "Beginner",
+        "3": "Intermediate",
+        "4": "Advanced",
+        "5": "Expert"
+      }
+    },
+    {
+      "question": "How important is it for you to be placed on a team with players of varying skill levels?",
+      "answers": {
+        "1": "Not important",
+        "2": "Somewhat unimportant",
+        "3": "Neutral",
+        "4": "Somewhat important",
+        "5": "Very important"
+      }
+    },
+    {
+      "question": "How important is it for you to be on a team with players of various experience levels?",
+      "answers": {
+        "1": "Not important",
+        "2": "Somewhat unimportant",
+        "3": "Neutral",
+        "4": "Somewhat important",
+        "5": "Very important"
+      }
+    },
+    {
+      "question": "How well do you think you can adapt to players with different skill levels on your team?",
+      "answers": {
+        "1": "Very poorly",
+        "2": "Poorly",
+        "3": "Moderately well",
+        "4": "Well",
+        "5": "Very well"
+      }
+    },
+    {
+      "question": "How do you feel about playing with people of both lower and higher experience than yours?",
+      "answers": {
+        "1": "Very uncomfortable",
+        "2": "Uncomfortable",
+        "3": "Neutral",
+        "4": "Comfortable",
+        "5": "Very comfortable"
+      }
+    },
+    {
+      "question": "How likely are you to help less experienced players improve their skills?",
+      "answers": {
+        "1": "Not likely at all",
+        "2": "Unlikely",
+        "3": "Neutral",
+        "4": "Likely",
+        "5": "Very likely"
+      }
+    }
+  ]
+}
