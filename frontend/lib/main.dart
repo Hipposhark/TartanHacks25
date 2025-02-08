@@ -125,282 +125,54 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:huddleup/providers/prompt_provider.dart';
+import 'package:provider/provider.dart';
+
 import 'package:huddleup/screens/home.dart';
+import 'package:huddleup/screens/organizer/prompt.dart';
+import 'package:huddleup/screens/organizer/waiting.dart';
+import 'package:huddleup/screens/organizer/teams.dart';
+import 'package:huddleup/screens/participant/code.dart';
+import 'package:huddleup/screens/participant/name.dart';
+import 'package:huddleup/screens/participant/form.dart';
+import 'package:huddleup/screens/participant/wait.dart';
+import 'package:huddleup/screens/participant/team.dart';
  
 // function to trigger build when the app is run
 void main() {
-  runApp(MaterialApp(
-    initialRoute: '/home',
-    routes: {
-      '/home': (context) => const HomeRoute(),
-      '/organizer/prompt': (context) => const OrganizerPromptRoute(),
-      '/organizer/loading': (context) => const OrganizerLoadingRoute(),
-      '/organizer/teams': (context) => const OrganizerTeamsRoute(),
-      '/participant/code': (context) => const ParticipantCodeRoute(),
-      '/participant/name': (context) => const ParticipantNameRoute(),
-      '/participant/form': (context) => const ParticipantFormRoute(),
-      '/participant/team': (context) => const ParticipantTeamRoute(),
-    },
-  )); //MaterialApp
-}
- 
-class OrganizerPromptRoute extends StatelessWidget {
-  const OrganizerPromptRoute({super.key});
- 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Organizer Prompt"),
-        backgroundColor: Colors.green,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'What type of teams are we forming?',
-              ),
-            ),
-            const SizedBox(height: 16.0),
-            Row(
-              children: [
-                const Text("Teams of"),
-                const SizedBox(width: 8.0),
-                Expanded(
-                  child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: '#',
-                  ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16.0),
-            Row(
-              children: [
-                ElevatedButton(
-                  child: const Text('Back!'),
-                  onPressed: () {
-                  Navigator.pop(context);
-                  },
-                ),
-                ElevatedButton(
-                  child: const Text('Start Forming!'),
-                  onPressed: () {
-                  Navigator.pushNamed(context, '/organizer/loading');
-                  },
-                ),
-              ],
-            )
-            ],
-        )
-      ),
-    );
-  }
+  runApp(
+    ChangeNotifierProvider (
+      create: (context) => PromptProvider(),
+      child: const HuddleUpApp(),
+    ),
+  );
 }
 
-class OrganizerLoadingRoute extends StatelessWidget {
-  const OrganizerLoadingRoute({super.key});
- 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Organizer Loading"),
-        backgroundColor: Colors.green,
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            Text("[prompt]"),
-            Text("[code]"),
-            ElevatedButton(
-              child: const Text('Finalize Teams!'),
-              onPressed: () {
-                Navigator.pushNamed(context, '/organizer/teams');
-              },
-            ),
-          ],
-        )
-      ,),
-    );
-  }
-}
+class HuddleUpApp extends StatelessWidget {
+  const HuddleUpApp({super.key});
 
-class OrganizerTeamsRoute extends StatelessWidget {
-  const OrganizerTeamsRoute({super.key});
- 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Organized Teams"),
-        backgroundColor: Colors.green,
-      ),
-      body: Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-            const Text("Teams"),
-            const SizedBox(height: 16.0),
-            Container(
-              decoration: const BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-            ),
-            const SizedBox(height: 16.0),
-            const Text("[code]"),
-          ],
-        ),
-      ),
-    );
-  }
-}
+    return MaterialApp(
+      title: "HuddleUp",
+      // theme: ThemeData(colorScheme: )
+      initialRoute: '/home',
+      routes: {
+        // home route
+        '/home': (context) => const HomeRoute(),
 
-class ParticipantCodeRoute extends StatelessWidget {
-  const ParticipantCodeRoute({super.key});
- 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Participant Code"),
-        backgroundColor: Colors.green,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text("What's your Organizer Code?"),
-            const SizedBox(height: 16.0),
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'My code is...',
-              ),
-            ),
-            const SizedBox(height: 16.0),
-            ElevatedButton(
-              child: const Text("Onward!"),
-              onPressed: () {
-                Navigator.pushNamed(context, '/participant/name');
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+        // organizer routes
+        '/organizer/prompt': (context) => const OrganizerPromptRoute(),
+        '/organizer/waiting':(context) => const OrganizerWaitingRoute(),
+        '/organizer/teams':  (context) => const OrganizerTeamsRoute(),
 
-class ParticipantNameRoute extends StatelessWidget {
-  const ParticipantNameRoute({super.key});
- 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Participant Name"),
-        backgroundColor: Colors.green,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text("What's your name?"),
-            const SizedBox(height: 16.0),
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'My name is...',
-              ),
-            ),
-            const SizedBox(height: 16.0),
-            ElevatedButton(
-              child: const Text("Onward!"),
-              onPressed: () {
-                Navigator.pushNamed(context, '/participant/form');
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class ParticipantFormRoute extends StatelessWidget {
-  const ParticipantFormRoute({super.key});
- 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Participant Name"),
-        backgroundColor: Colors.green,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text("Answer these Questions!"),
-            const SizedBox(height: 16.0),
-            Container(
-              decoration: const BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-            ),
-            const SizedBox(height: 16.0),
-            // ListView.builder(
-            //   itemCount: 10,
-            //   itemBuilder: (context, index) {
-            //   return ListTile(
-            //     title: Text("q#"),
-            //   );
-            //   },
-            // ),
-          ]
-        ),
-      ),
-    );
-  }
-}
-
-class ParticipantTeamRoute extends StatelessWidget {
-  const ParticipantTeamRoute({super.key});
- 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Huddle Up!"),
-        backgroundColor: Colors.green,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text("##"),
-            const SizedBox(height: 16.0),
-            Container(
-              decoration: const BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(color: Colors.black),
-                ),
-              ),
-            ),
-            const SizedBox(height: 16.0)
-          ]
-        ),
-      ),
+        // participant routes
+        '/participant/code': (context) => const ParticipantCodeRoute(),
+        '/participant/name': (context) => const ParticipantNameRoute(),
+        '/participant/form': (context) => const ParticipantFormRoute(),
+        '/participant/wait': (context) => const ParticipantWaitRoute(),
+        '/participant/team': (context) => const ParticipantTeamRoute(),
+      },
     );
   }
 }
