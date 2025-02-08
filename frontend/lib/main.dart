@@ -1,4 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:huddleup/firebase_options.dart';
 import 'package:huddleup/providers/app_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +15,12 @@ import 'package:huddleup/screens/participant/wait.dart';
 import 'package:huddleup/screens/participant/team.dart';
  
 // function to trigger build when the app is run
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     ChangeNotifierProvider (
       create: (context) => AppProvider(),

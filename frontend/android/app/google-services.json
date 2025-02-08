@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "291538833230",
+    "project_id": "tartanhacks25-huddleup",
+    "storage_bucket": "tartanhacks25-huddleup.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291538833230:android:063c6e9bb5e7234b01581f",
+        "android_client_info": {
+          "package_name": "com.example.tartanhacks"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOjkEpHGhHlzHTFYqhGqNGv0fZUZij-v8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
