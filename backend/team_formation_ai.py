@@ -26,7 +26,7 @@ def clean_json_response(response_text):
     return response_text.strip()
 
 def generate_criteria_and_questions(prompt):
-    system_message = "You are an expert in parsing team formation criteria and generating relevant survey questions. Given a natural language prompt, extract the key team formation constraints and then generate a set of varied survey questions (multiple-choice, numerical, and open-ended). Format the output as valid JSON."
+    system_message = "You are an expert in parsing team formation criteria and generating relevant survey questions. Given a natural language prompt, extract the key team formation constraints and then generate a set of seven multiple-choice survey questions. Frame each question as answerable on a scale from 1 to 5, ensuring that there are always 5 answer choices per question. Make the questions specific to the given situation. Format the output as valid JSON."
     
     client = openai.OpenAI(api_key=OPENAI_API_KEY)
     
