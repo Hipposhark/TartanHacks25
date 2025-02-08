@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:huddleup/providers/prompt_provider.dart';
+import 'package:huddleup/providers/app_provider.dart';
 import 'package:provider/provider.dart';
 
 class OrganizerPromptRoute extends StatelessWidget {
@@ -8,7 +8,7 @@ class OrganizerPromptRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PromptProvider promptProvider = Provider.of<PromptProvider>(context);
+    AppProvider appProvider = Provider.of<AppProvider>(context);
 
     return GestureDetector(
       // dismisses keyboards upon losing focus
@@ -39,7 +39,8 @@ class OrganizerPromptRoute extends StatelessWidget {
                       hintText: 'I am trying to form teams of...',
                     ),
                     onChanged: (text) {
-                      promptProvider.setPrompt(text);
+                      // promptProvider.setPrompt(text);
+                      appProvider.setOrganizerPrompt(text);
                       print('prompt: $text (${text.characters.length})');
                     },
                   ),
@@ -68,7 +69,7 @@ class OrganizerPromptRoute extends StatelessWidget {
                                 return oldValue; // reject invalid input
                               }
                             }
-                            promptProvider.setTeamSize(int.parse(text));
+                            appProvider.setOrganizerTeamSize(int.parse(text));
                             return newValue; // allow valid input
                           }),
                         ],

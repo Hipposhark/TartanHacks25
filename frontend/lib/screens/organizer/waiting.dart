@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:huddleup/providers/prompt_provider.dart';
+import 'package:huddleup/providers/app_provider.dart';
 import 'package:provider/provider.dart';
 
 class OrganizerWaitingRoute extends StatelessWidget {
@@ -7,7 +7,7 @@ class OrganizerWaitingRoute extends StatelessWidget {
  
   @override
   Widget build(BuildContext context) {
-    PromptProvider promptProvider = Provider.of<PromptProvider>(context);
+    AppProvider appProvider = Provider.of<AppProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -17,7 +17,8 @@ class OrganizerWaitingRoute extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text(promptProvider.prompt),
+            Text(appProvider.getOrganizerPrompt()),
+            // Text("[prompt]"),
             Text("[code]"),
             ElevatedButton(
               child: const Text('Finalize Teams!'),

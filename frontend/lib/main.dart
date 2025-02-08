@@ -125,6 +125,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:huddleup/providers/app_provider.dart';
 import 'package:huddleup/providers/prompt_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -142,7 +143,7 @@ import 'package:huddleup/screens/participant/team.dart';
 void main() {
   runApp(
     ChangeNotifierProvider (
-      create: (context) => PromptProvider(),
+      create: (context) => AppProvider(),
       child: const HuddleUpApp(),
     ),
   );
